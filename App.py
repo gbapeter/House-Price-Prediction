@@ -1,6 +1,7 @@
 import streamlit as st 
 import pandas as pd
 import joblib
+import numpy as np
 
 from sklearn.base import BaseEstimator, TransformerMixin
 
@@ -125,5 +126,6 @@ if submit:
         st.error(f"❌ Error: {e}")
 
         st.warning("Check that your group4.pkl is in the same folder as this script.")
+
 
 
