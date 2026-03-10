@@ -78,7 +78,7 @@ Example:
 y = df['price'] 
 X = df.drop(columns=['price']) 
 
-Then the dataset was split into training and testing set.
+Then the dataset was split into training (70%) and testing (30%) set.
 
 ### 7. Model Training
 A machine learning regression model was trained on the dataset to learn patterns that affect house prices. Linear Regression and Random Forest Regressor were used.
