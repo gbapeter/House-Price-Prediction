@@ -91,7 +91,7 @@ The model built using LinearRegression significantly underperformed in all meter
 The hyperparameters were tuned using RandomizedSearchCV and GridSearchCV which helped identified the best parameters.
 
 ### 10. Model Selection and Saving
-The first model (with default hyperparameters) outperformed the tuned ones. Because of time constraints, the first model (with default parameters and best performance) was saved using joblib.
+The first model (with default hyperparameters) outperformed the tuned ones. Because of time constraints and its superior performance, it (the model with default parameters) was selected and saved using joblib.
 
 ### 11. Model Deployment
 The model was then deployed using github and streamlit. Here is the link to the app: [House Price Prediction Application](https://group4-house-price-prediction.streamlit.app/).
