@@ -38,7 +38,7 @@ Each row represents a house listing.
 
 ## Machine Learning Workflow
 The project followed a standard machine learning pipeline:
-1. Data Loading
+1. Data Loading:
 The dataset was loaded using Pandas for analysis and preprocessing.
 
 2. Exploratory Data Analysis (EDA)
@@ -85,7 +85,16 @@ A machine learning regression model was trained on the dataset to learn patterns
 
 7. Model Evaluation
 The performance of the model was evaluated using regression metrics such as: Mean Absolute Error (MAE), Root Mean Squared Error (MSE) and R² Score.
+The model built using LinearRegression significantly underperformed in all meterics compared to the one that was built using RandomForestRegressor. Hence, RandomForest was chosen for the project.
 
+8. Hyperparameters Tuning
+The hyperparameters were tuned using RandomizedSearchCV and GridSearchCV which helped identified the best parameters.
+
+9. Model Selection and Saving
+The first model (with default hyperparameters) outperformed the tuned ones. Because of time constraints, the first model (with default parameters and best performance) was saved using joblib.
+
+10. Model Deployment
+The model was then deployed using github and streamlit. Here is the link to the app: [House Price Prediction Application](https://group4-house-price-prediction.streamlit.app/).
 
 # Contributors
 - Gba Peter Ternenge
