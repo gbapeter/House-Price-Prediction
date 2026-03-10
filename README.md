@@ -85,7 +85,8 @@ A machine learning regression model was trained on the dataset to learn patterns
 
 ### 8. Model Evaluation
 The performance of the models was evaluated using regression metrics such as: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE) and R² Score.
-The model built using LinearRegression significantly underperformed in all meterics compared to the one that was built using RandomForestRegressor. Hence, RandomForest was chosen for the project.
+The model built using LinearRegression significantly underperformed in all meterics compared to the one that was built using RandomForestRegressor. Hence, RandomForestRegressor was chosen for the project.
+Additionally, the final model had a mean absolute error of 108428 (meaning that on average, the predicted values were 108428 from the actual values). It also had a root mean squared error of 206414 (meaning that on average, the predictions made by the model deviated from the actual observed values by approximately 206,414 units), and an R2 score of 0.69 (meaning that 69% of the variations in the target variable were explained by the features).
 
 ### 9. Hyperparameters Tuning
 The hyperparameters were tuned using RandomizedSearchCV and GridSearchCV which helped identified the best parameters.
@@ -96,7 +97,8 @@ The first model (with default hyperparameters) outperformed the tuned ones. Beca
 ### 11. Model Deployment
 The model was then deployed using github and streamlit. Here is the link to the app: [House Price Prediction Application](https://group4-house-price-prediction.streamlit.app/).
 
-
+### 12. Feature Importances
+The feature importances of the model revealed that sqft_living, zipcode, onehot_city_seattle, sqft_lot, age (of house), and years_since_renovation were the top predictors of house price.
 
 # Contributors
 - Gba Peter Ternenge
