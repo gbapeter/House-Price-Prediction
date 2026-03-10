@@ -2,6 +2,32 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+from sklearn.base import BaseEstimator, TransformerMixin
+
+
+class FeatureEngineering(BaseEstimator, TransformerMixin):
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+
+        X = X.copy()
+
+        # Ensure datetime
+        X['date'] = pd.to_datetime(X['date'])
+
+        # Extract features
+        X['month'] = X['date'].dt.month
+        X['year'] = X['date'].dt.year
+
+        return X
+
+def log_func(x):
+    return np.log1p(x)
+
+def exp_func(x):
+    return np.expm1(x)
 model = joblib.load('group4.pkl')
 
 # All cities from training data 
@@ -78,3 +104,4 @@ if submit:
         st.error(f"❌ Error: {e}")
 
         st.warning("Check that your group4.pkl is in the same folder as this script.")
+
