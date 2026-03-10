@@ -84,7 +84,7 @@ Then the dataset was split into training and testing set.
 A machine learning regression model was trained on the dataset to learn patterns that affect house prices. Linear Regression and Random Forest Regressor were used.
 
 ### 8. Model Evaluation
-The performance of the model was evaluated using regression metrics such as: Mean Absolute Error (MAE), Root Mean Squared Error (MSE) and R² Score.
+The performance of the models was evaluated using regression metrics such as: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE) and R² Score.
 The model built using LinearRegression significantly underperformed in all meterics compared to the one that was built using RandomForestRegressor. Hence, RandomForest was chosen for the project.
 
 ### 9. Hyperparameters Tuning
