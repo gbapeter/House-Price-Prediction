@@ -52,7 +52,7 @@ The dataset was loaded using Pandas for analysis and preprocessing.
 - Checked the number of times each city occurred.
 - Checked the relationship between numerical variables using a heatmap and correlation
 
-3. Feature Engineering
+### 3. Feature Engineering
 New columns were created to help the model learn better. They include: year_sold, month, age, years_since_renovation, renovate (to show whether house was renovated or not), has_basement, and zipcode.
 
 4. Data Cleaning
