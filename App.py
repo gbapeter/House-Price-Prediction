@@ -16,13 +16,34 @@ class FeatureEngineering(BaseEstimator, TransformerMixin):
 
         # Ensure datetime
         X['date'] = pd.to_datetime(X['date'])
-
-        # Extract features
+        # Extract month and year from the date column
         X['month'] = X['date'].dt.month
-        X['year'] = X['date'].dt.year
+        X['year_sold'] = X['date'].dt.year
+
+        # Feature engineering
+        X['house_age'] = X['year_sold'] - X['yr_built']
+
+        X['years_since_renovation'] = np.where(
+            X['yr_renovated'] == 0,
+            X['year_sold'] - X['yr_built'],
+            X['year_sold'] - X['yr_renovated']
+        )
+
+        X['renovated'] = (X['yr_renovated'] != 0).astype(int)
+
+        X['has_basement'] = (X['sqft_basement'] != 0).astype(int)
+
+        X[['state', 'zipcode']] =X['statezip'].str.split(' ', expand = True)
+
+
+        # Drop unused columns
+        X = X.drop(columns=[
+            'date','year_sold','yr_built','yr_renovated',
+            'street','country','sqft_basement',
+            'sqft_above','statezip','state'
+        ])
 
         return X
-
 def log_func(x):
     return np.log1p(x)
 
@@ -104,4 +125,5 @@ if submit:
         st.error(f"❌ Error: {e}")
 
         st.warning("Check that your group4.pkl is in the same folder as this script.")
+
 
