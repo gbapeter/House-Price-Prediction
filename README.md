@@ -41,7 +41,7 @@ The project followed a standard machine learning pipeline:
 1. Data Loading:
 The dataset was loaded using Pandas for analysis and preprocessing.
 
-2. Exploratory Data Analysis (EDA)
+### 2. Exploratory Data Analysis (EDA)
 - Checked the datatypes of each column.
 - Checked the summary statistics of the numerical columns.
 - Checked for outliers and distribution using a histogram and box-plot of all numerical columns. Outliers were detected but not removed because they are expected to be in a housing dataset.
