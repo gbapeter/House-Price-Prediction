@@ -2,15 +2,15 @@
 This project applies Machine Learning techniques to predict house prices using property features such as number of bedrooms, bathrooms, square footage, and location details. The model is trained on housing data and learns the patterns that influence real estate prices.
 The goal of the project is to demonstrate how supervised machine learning models can be used for regression problems, specifically predicting housing prices.
 
-# Technologies Used
-- Python: 
-- Pandas:
-- NumPy:
-- Scikit-learn:
-- Joblib:
-- Streamlit:
-- Jupyter Notebook:
-- Github: 
+# Tools Used
+- **Python**: A high-level, interpreted, general-purpose programming language designed for high readability, simplicity, and versatility
+- **Pandas**: A python library for data manipulation and analysis.
+- **NumPy**: A python library for working with arrays.
+- **Scikit-learn**: A python library for machine learning tasks.
+- **Joblib**: A set of tools to provide lightweight pipelining in Python. Used for saving and loading machine learning models.
+- **Streamlit**: A python library used for creating interactive applications, specifically, to deploy machine learning models.
+- **Jupyter Notebook**: A code editor used by data scientists and machine learning engineers.
+- **Git and Github**: A cloud-based platform for storing code and collaborating with others.
 
 # Project Structure
 ## Dataset Description
@@ -38,7 +38,7 @@ Each row represents a house listing.
 
 ## Machine Learning Workflow
 The project followed a standard machine learning pipeline:
-1. Data Loading:
+### 1. Data Loading:
 The dataset was loaded using Pandas for analysis and preprocessing.
 
 ### 2. Exploratory Data Analysis (EDA)
@@ -55,7 +55,7 @@ The dataset was loaded using Pandas for analysis and preprocessing.
 ### 3. Feature Engineering
 New columns were created to help the model learn better. They include: year_sold, month, age, years_since_renovation, renovate (to show whether house was renovated or not), has_basement, and zipcode.
 
-4. Data Cleaning
+### 4. Data Cleaning
 Cleaning steps include:
 - Removing unnecessary columns:
 	- The date column was dropped after using it to extract the month and year.
@@ -70,31 +70,33 @@ Cleaning steps include:
 - Removed 0s in price because a house should not cost $0. There were 49 rows (1% of dataset) with that issue.
 - Further investigation revealed that only two rows had 0s for bathroom and bedroom columns and both had multiple floors. This suggested wrong entries and should be removed. It is possible that houses built specifically for commercial purpose would not have bedrooms and bathrooms, but since that could not be known for this dataset, it felt safer to drop them, especially as only two rows were affected.
  
-6. Data Splitting
-The dataset was divided into:
-X (Features) → independent variables
-y (Target) → house price
-Example:
-y = df['price']
-X = df.drop(columns=['price'])
+### 6. Data Splitting
+The dataset was divided into: 
+X (Features) → independent variables 
+y (Target) → house price 
+Example: 
+y = df['price'] 
+X = df.drop(columns=['price']) 
 
 Then the dataset was split into training and testing set.
 
-6. Model Training
+### 7. Model Training
 A machine learning regression model was trained on the dataset to learn patterns that affect house prices. Linear Regression and Random Forest Regressor were used.
 
-7. Model Evaluation
+### 8. Model Evaluation
 The performance of the model was evaluated using regression metrics such as: Mean Absolute Error (MAE), Root Mean Squared Error (MSE) and R² Score.
 The model built using LinearRegression significantly underperformed in all meterics compared to the one that was built using RandomForestRegressor. Hence, RandomForest was chosen for the project.
 
-8. Hyperparameters Tuning
+### 9. Hyperparameters Tuning
 The hyperparameters were tuned using RandomizedSearchCV and GridSearchCV which helped identified the best parameters.
 
-9. Model Selection and Saving
+### 10. Model Selection and Saving
 The first model (with default hyperparameters) outperformed the tuned ones. Because of time constraints, the first model (with default parameters and best performance) was saved using joblib.
 
-10. Model Deployment
+### 11. Model Deployment
 The model was then deployed using github and streamlit. Here is the link to the app: [House Price Prediction Application](https://group4-house-price-prediction.streamlit.app/).
+
+
 
 # Contributors
 - Gba Peter Ternenge
